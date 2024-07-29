@@ -23,18 +23,46 @@
 //     console.log('As variáveis numeroDez e stringDez não tem o mesmo valor')
 // }
 
-var nome = prompt('Qual o seu nome?');
-var idade = prompt("Quantos anos você tem?");
-var linguagem = prompt("Qual linguagem de programação você está estudando?");
+// var nome = prompt('Qual o seu nome?');
+// var idade = prompt("Quantos anos você tem?");
+// var linguagem = prompt("Qual linguagem de programação você está estudando?");
 
-var mensagem = `Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!`;
+// var mensagem = `Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!`;
 
-alert(mensagem);
+// alert(mensagem);
 
-var pergunta = prompt(`Você gosta de estudar ${linguagem}? Responda com o número 1 para SIM ou 2 para NÃO.`)
+// var pergunta = prompt(`Você gosta de estudar ${linguagem}? Responda com o número 1 para SIM ou 2 para NÃO.`)
 
-if (pergunta == 1) {
-    alert('Muito bom! Continue estudando e você terá muito sucesso.');
-} else if (pergunta == 2) {
-    alert('Ahh que pena... Já tentou aprender outras linguagens?');
- }
+// if (pergunta == 1) {
+//     alert('Muito bom! Continue estudando e você terá muito sucesso.');
+// } else if (pergunta == 2) {
+//     alert('Ahh que pena... Já tentou aprender outras linguagens?');
+//  }
+
+// var area = prompt('Você quer seguir para a área de front-end ou back-end?');
+// console.log(area);
+
+// if (area == 'front-end') {
+//     var areaFront = prompt('Você quer aprender React ou Vue?');
+//     console.log(areaFront);
+// } else if (area == 'back-end') {
+//     var areaBack = prompt('Você quer aprender C# ou Java?');
+//     console.log(areaBack);
+// }
+
+// var seguirEspecializando = prompt(`Você quer seguir se especializando em ${area} ou quer se tornar fullstack?`);
+// console.log(seguirEspecializando);
+
+// var tecnologia = '';
+
+// do {
+//     tecnologia = prompt('Tem mais alguma tecnologia que você gostaria de aprender?');
+//     if (tecnologia != 'ok') {
+//         alert(`A tecnologia ${tecnologia} é muito legal. Ótima escolha!`);
+//         console.log(tecnologia);
+//     }
+// } while (tecnologia != 'ok');
+
+// var tecnologias = prompt('Agora, me fale todas as tecnologias que você quer aprender em uma única resposta.');
+// console.log(tecnologias);
+
