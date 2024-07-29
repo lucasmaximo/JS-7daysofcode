@@ -66,23 +66,54 @@
 // var tecnologias = prompt('Agora, me fale todas as tecnologias que você quer aprender em uma única resposta.');
 // console.log(tecnologias);
 
-const numeroSecreto = Math.floor(Math.random() * 10 + 1);
-console.log(numeroSecreto);
+// const numeroSecreto = Math.floor(Math.random() * 10 + 1);
+// console.log(numeroSecreto);
 
-var tentativas = 3;
+// var tentativas = 3;
 
-for (let i = 1; i <= tentativas; i++) {
-    let chute = prompt('Advinhe o número secreto:');
+// for (let i = 1; i <= tentativas; i++) {
+//     let chute = prompt('Advinhe o número secreto:');
 
-    if (chute == numeroSecreto) {
-        alert('Parabéns! Você acertou o número secreto.');
-        break;
-    } else {
-        if (i == tentativas) {
-            alert(`Você não acertou. O número secreto era ${numeroSecreto}.`);
-            break;
-        } else {
-            alert('Tente novamente!');
+//     if (chute == numeroSecreto) {
+//         alert('Parabéns! Você acertou o número secreto.');
+//         break;
+//     } else {
+//         if (i == tentativas) {
+//             alert(`Você não acertou. O número secreto era ${numeroSecreto}.`);
+//             break;
+//         } else {
+//             alert('Tente novamente!');
+//         }
+//     }
+// }
+
+let frutas = [], bebidas = [], congelados = [];
+
+do {
+    var resposta = prompt('Voce deseja adicionar uma comida na sua lista de compras?');
+    if (resposta.toLowerCase() === 'sim') {
+        let comida = prompt('Qual comida você deseja inserir?');
+        let categoria = prompt('Em qual categoria essa comida se encaixa (frutas, bebidas ou congelados)?');
+        
+        switch (categoria) {
+            case 'frutas':
+                frutas.push(comida);
+                break;
+            case 'bebidas':
+                bebidas.push(comida);
+                break;
+            case 'congelados':
+                congelados.push(comida);
+                break;
+            default:
+                alert('Categoria inválida. Tente novamente.');
         }
+    } else if (resposta === 'não') {
+        console.log('Lista de compras:');
+        console.log(`Frutas: ${frutas.join(', ')}`);
+        console.log(`Bebidas: ${bebidas.join(', ')}`);
+        console.log(`Congelados: ${congelados.join(', ')}`);
+        break;
     }
-}
+
+} while (resposta.toLowerCase() === 'sim');
