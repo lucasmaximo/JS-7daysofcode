@@ -66,3 +66,23 @@
 // var tecnologias = prompt('Agora, me fale todas as tecnologias que você quer aprender em uma única resposta.');
 // console.log(tecnologias);
 
+const numeroSecreto = Math.floor(Math.random() * 10 + 1);
+console.log(numeroSecreto);
+
+var tentativas = 3;
+
+for (let i = 1; i <= tentativas; i++) {
+    let chute = prompt('Advinhe o número secreto:');
+
+    if (chute == numeroSecreto) {
+        alert('Parabéns! Você acertou o número secreto.');
+        break;
+    } else {
+        if (i == tentativas) {
+            alert(`Você não acertou. O número secreto era ${numeroSecreto}.`);
+            break;
+        } else {
+            alert('Tente novamente!');
+        }
+    }
+}
