@@ -89,31 +89,70 @@
 
 let frutas = [], bebidas = [], congelados = [];
 
+
+//lógica de inserção de itens na lista
 do {
-    var resposta = prompt('Voce deseja adicionar uma comida na sua lista de compras?');
-    if (resposta.toLowerCase() === 'sim') {
+    var adicionar = prompt('Você deseja adicionar uma comida na sua lista de compras?');
+    if (adicionar.toLowerCase() === 'sim') {
         let comida = prompt('Qual comida você deseja inserir?');
         let categoria = prompt('Em qual categoria essa comida se encaixa (frutas, bebidas ou congelados)?');
         
-        switch (categoria) {
-            case 'frutas':
-                frutas.push(comida);
-                break;
-            case 'bebidas':
-                bebidas.push(comida);
-                break;
-            case 'congelados':
-                congelados.push(comida);
-                break;
-            default:
-                alert('Categoria inválida. Tente novamente.');
-        }
-    } else if (resposta === 'não') {
+        adicionarComidaNaLista(categoria, comida);
+
+    } else if (adicionar.toLowerCase() === 'não') {
         console.log('Lista de compras:');
         console.log(`Frutas: ${frutas.join(', ')}`);
         console.log(`Bebidas: ${bebidas.join(', ')}`);
         console.log(`Congelados: ${congelados.join(', ')}`);
         break;
     }
+} while (adicionar.toLowerCase() === 'sim');
 
-} while (resposta.toLowerCase() === 'sim');
+function adicionarComidaNaLista(categoria, comida) {
+    switch (categoria) {
+        case 'frutas':
+            frutas.push(comida);
+            break;
+        case 'bebidas':
+            bebidas.push(comida);
+            break;
+        case 'congelados':
+            congelados.push(comida);
+            break;
+        default:
+            alert('Categoria inválida. Tente novamente.');
+    }
+}
+
+
+//lógica de remoção de itens da lista
+do {
+    var remover = prompt('Você quer remover algum item da lista?');
+    if (remover.toLowerCase() === 'sim') {
+        let categoria = prompt('De qual categoria você deseja remover (frutas, bebidas ou congelados)?');
+        let comida = prompt('Qual item você deseja remover da lista?');
+
+        removerComidaNaLista(categoria, comida);
+
+    } else if (remover.toLowerCase() === 'não') {
+        console.log('Lista de compras:');
+        console.log(`Frutas: ${frutas.join(', ')}`);
+        console.log(`Bebidas: ${bebidas.join(', ')}`);
+        console.log(`Congelados: ${congelados.join(', ')}`);
+        break;
+    }
+} while (remover.toLowerCase() === 'sim');
+
+function removerComidaNaLista(categoria, comida) {
+    switch (categoria) {
+        case 'frutas':
+            frutas = frutas.filter(item => item !== comida);
+            break;
+        case 'bebidas':
+            bebidas = bebidas.filter(item => item !== comida);
+            break;
+        case 'congelados':
+            congelados = congelados.filter(item => item !== comida);
+            break;
+    }
+}
