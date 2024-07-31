@@ -87,72 +87,115 @@
 //     }
 // }
 
-let frutas = [], bebidas = [], congelados = [];
+// let frutas = [], bebidas = [], congelados = [];
 
 
-//lógica de inserção de itens na lista
-do {
-    var adicionar = prompt('Você deseja adicionar uma comida na sua lista de compras?');
-    if (adicionar.toLowerCase() === 'sim') {
-        let comida = prompt('Qual comida você deseja inserir?');
-        let categoria = prompt('Em qual categoria essa comida se encaixa (frutas, bebidas ou congelados)?');
+// //lógica de inserção de itens na lista
+// do {
+//     var adicionar = prompt('Você deseja adicionar uma comida na sua lista de compras?');
+//     if (adicionar.toLowerCase() === 'sim') {
+//         let comida = prompt('Qual comida você deseja inserir?');
+//         let categoria = prompt('Em qual categoria essa comida se encaixa (frutas, bebidas ou congelados)?');
         
-        adicionarComidaNaLista(categoria, comida);
+//         adicionarComidaNaLista(categoria, comida);
 
-    } else if (adicionar.toLowerCase() === 'não') {
-        console.log('Lista de compras:');
-        console.log(`Frutas: ${frutas.join(', ')}`);
-        console.log(`Bebidas: ${bebidas.join(', ')}`);
-        console.log(`Congelados: ${congelados.join(', ')}`);
-        break;
-    }
-} while (adicionar.toLowerCase() === 'sim');
+//     } else if (adicionar.toLowerCase() === 'não') {
+//         console.log('Lista de compras:');
+//         console.log(`Frutas: ${frutas.join(', ')}`);
+//         console.log(`Bebidas: ${bebidas.join(', ')}`);
+//         console.log(`Congelados: ${congelados.join(', ')}`);
+//         break;
+//     }
+// } while (adicionar.toLowerCase() === 'sim');
 
-function adicionarComidaNaLista(categoria, comida) {
-    switch (categoria) {
-        case 'frutas':
-            frutas.push(comida);
-            break;
-        case 'bebidas':
-            bebidas.push(comida);
-            break;
-        case 'congelados':
-            congelados.push(comida);
-            break;
-        default:
-            alert('Categoria inválida. Tente novamente.');
-    }
+// function adicionarComidaNaLista(categoria, comida) {
+//     switch (categoria) {
+//         case 'frutas':
+//             frutas.push(comida);
+//             break;
+//         case 'bebidas':
+//             bebidas.push(comida);
+//             break;
+//         case 'congelados':
+//             congelados.push(comida);
+//             break;
+//         default:
+//             alert('Categoria inválida. Tente novamente.');
+//     }
+// }
+
+
+// //lógica de remoção de itens da lista
+// do {
+//     var remover = prompt('Você quer remover algum item da lista?');
+//     if (remover.toLowerCase() === 'sim') {
+//         let categoria = prompt('De qual categoria você deseja remover (frutas, bebidas ou congelados)?');
+//         let comida = prompt('Qual item você deseja remover da lista?');
+
+//         removerComidaNaLista(categoria, comida);
+
+//     } else if (remover.toLowerCase() === 'não') {
+//         console.log('Lista de compras:');
+//         console.log(`Frutas: ${frutas.join(', ')}`);
+//         console.log(`Bebidas: ${bebidas.join(', ')}`);
+//         console.log(`Congelados: ${congelados.join(', ')}`);
+//         break;
+//     }
+// } while (remover.toLowerCase() === 'sim');
+
+// function removerComidaNaLista(categoria, comida) {
+//     switch (categoria) {
+//         case 'frutas':
+//             frutas = frutas.filter(item => item !== comida);
+//             break;
+//         case 'bebidas':
+//             bebidas = bebidas.filter(item => item !== comida);
+//             break;
+//         case 'congelados':
+//             congelados = congelados.filter(item => item !== comida);
+//             break;
+//     }
+// }
+
+function somar (num1, num2) {
+    return +num1 + +num2;
+}
+
+function subtrair(num1, num2) {
+    return +num1 - +num2;
+}
+
+function multiplicar(num1, num2) {
+    return +num1 * +num2;
+}
+
+function dividir(num1, num2) {
+    return +num1 / +num2;
 }
 
 
-//lógica de remoção de itens da lista
 do {
-    var remover = prompt('Você quer remover algum item da lista?');
-    if (remover.toLowerCase() === 'sim') {
-        let categoria = prompt('De qual categoria você deseja remover (frutas, bebidas ou congelados)?');
-        let comida = prompt('Qual item você deseja remover da lista?');
+    var operacao = prompt('Qual operação você quer executar (somar, subtrair, multiplicar ou dividir)?');
 
-        removerComidaNaLista(categoria, comida);
-
-    } else if (remover.toLowerCase() === 'não') {
-        console.log('Lista de compras:');
-        console.log(`Frutas: ${frutas.join(', ')}`);
-        console.log(`Bebidas: ${bebidas.join(', ')}`);
-        console.log(`Congelados: ${congelados.join(', ')}`);
+    if (operacao === 'sair') {
+        alert('Até a próxima!');
         break;
     }
-} while (remover.toLowerCase() === 'sim');
+    var num1 = prompt('Digite o primeiro número da operação:');
+    var num2 = prompt('Digite o segundo número da operação:');
 
-function removerComidaNaLista(categoria, comida) {
-    switch (categoria) {
-        case 'frutas':
-            frutas = frutas.filter(item => item !== comida);
-            break;
-        case 'bebidas':
-            bebidas = bebidas.filter(item => item !== comida);
-            break;
-        case 'congelados':
-            congelados = congelados.filter(item => item !== comida);
-            break;
+    if (operacao === 'somar') {
+        alert(somar(num1, num2));
     }
-}
+    if (operacao === 'subtrair') {
+        alert(subtrair(num1, num2));
+    }    
+    if (operacao === 'multiplicar') {
+        alert(multiplicar(num1, num2));
+    }    
+    if (operacao === 'dividir') {
+        alert(dividir(num1, num2));
+    }
+
+} while (operacao !== 'sair');
+
